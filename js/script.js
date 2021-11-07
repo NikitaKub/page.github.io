@@ -1,36 +1,39 @@
-function addElement() {
+function addElements() {
 
     let newDiv = document.createElement("div");
     newDiv.id = "textTop";
-    newDiv
-    newDiv.onclick = function () {
-        let textAbs = document.getElementById("textTop2");
-        textAbs.innerHTML = textRandom();
-    };
 
-    document.body.appendChild(newDiv);
-}
-function addText() {
     let newText = document.createElement("h1");
     newText.innerHTML = "Magic Ball </br> Imaginate your question.";
-    document.body.appendChild(newText);
-}
-function divCentr() {
-    let newDiv = document.createElement("div");
-    newDiv.id = "textTop1";
 
-    let div1 = document.getElementById("textTop");
-    div1.appendChild(newDiv);
-}
-function textCentr() {
     let newTextAbs = document.createElement("span");
-    newTextAbs.id = "textTop2";
-    newTextAbs.innerHTML = "Press on Ball";
+    newTextAbs.id = "textTop1";
+    newTextAbs.innerHTML = "I am wait...";
 
-    let div1 = document.getElementById("textTop1");
-    div1.appendChild(newTextAbs);
+    let conteinerDiv = document.createElement("div");
+    conteinerDiv.id = "conteiner";
+
+    let button = document.createElement("button");
+    button.innerHTML = "Press on me";
+    button.id = "buttonNew";
+    button.onclick = function () {
+        document.getElementById("textTop1").innerHTML = textRandom();
+
+        document.getElementById("textTop").classList.add("shake");
+        setTimeout(function () {
+            document.getElementById("textTop").classList.remove("shake");
+        }, 1000);
+    };
+
+    document.body.appendChild(conteinerDiv);
+    conteinerDiv.appendChild(newText);
+    conteinerDiv.appendChild(newDiv);
+    newDiv.appendChild(newTextAbs);
+    conteinerDiv.appendChild(button);
 }
+
 var arrWords = new Array("Yes", "No", "Maybe", "Really?", "Can be...", "Ohh wait...");
+
 function textRandom() {
     return arrWords[Math.floor(Math.random() * ((arrWords.length) - 0) + 0)];
 }
