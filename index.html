@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Лабораторна робота </title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css\style.css">
+<script src="js\script.js"> </script>
+</head>
+<body>
+    <div class="globalCase">
+        <div class="conteinerGlobal">
+            <div class="box">
+                <span id="playerName1"> - </span>
+            </div>
+            <div class="insideBox">
+                <div class="boxPoints">
+                    <span id="currentPoint1"> 0 </span>
+                </div>
+            </div>
+            <div class="insideBox">
+                <div class="boxPointsNeed" id="roundPoint1"></div>
+            </div>
+        </div>
+        <div class="line">
+
+        </div>
+        <div class="conteinerGlobal">
+            <div class="box">
+                <span id="playerName2"> - </span>
+            </div>
+            <div class="insideBox">
+                <div class="boxPoints">
+                    <span id="currentPoint2"> 0 </span>
+                </div>
+            </div>
+            <div class="insideBox">
+                <div class="boxPointsNeed" id="roundPoint2"></div>
+            </div>
+        </div>
+        <button class="startMenu" id="butStartGame" onclick="startGame()"> Start game </button>
+        <button class="gameRoll" id="roll" onclick="game()"> Generate! </button>
+        <button class="stopGame" id="stop" onclick="stop()"> Stop! </button>
+        <div class="endGame" id="end1">
+            <span id="name1">  </span>
+            <button class="endGame1" onclick="restart()"> Try again! </button>
+        </div>
+        <div class="endGame" id="end2">
+            <span id="name2">  </span>
+            <button class="endGame1" onclick="restart()"> Try again! </button>
+        </div>
+    </div>
+</body>
+</html>
