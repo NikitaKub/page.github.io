@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Лабораторна робота </title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css\style.css">
+<script src="js\script.js"> </script>
+</head>
+<body>
+
+	<div class="globalCase">
+		<div class="conteinerGlobal">
+			<div class="boxShar" onclick="sharGame()">
+
+			</div>
+		</div>
+		<div class="conteinerGlobal">
+			<div class="boxTwentyOne" onclick="twentyOneGame()">
+
+			</div>
+		</div>
+		<div class="conteinerGlobal">
+			<div class="boxOchko" onclick="ochkoGame()">
+
+			</div>
+		</div>
+		<div class="conteinerGlobal">
+			<div class="boxKazino" onclick="casinoGame()">
+
+			</div>
+		</div>
+	</div>
+
+	<div id="conteiner">
+		<h1 id="h1"> Magic Ball </br> Imaginate your question. </h1>
+		<div id="textTop">
+			<span id="textTop1"> I am wait... </span>
+		</div>
+		<button id="button" onclick="Random()"> Press on me </button>
+	</div>
+
+	<div class="globalCase" id="ochkoGame">
+		<div class="conteinerGlobal">
+			<div class="box">
+				<span id="playerName1"> - </span>
+			</div>
+			<div class="insideBox">
+				<div class="boxPoints">
+					<span id="currentPoint1"> 0 </span>
+				</div>
+			</div>
+			<div class="insideBox">
+				<div class="boxPointsNeed">
+					<span id="roundPoint1"> 0 </span>
+				</div>
+			</div>
+		</div>
+		<div class="line">	</div>
+		<div class="conteinerGlobal">
+			<div class="box">
+				<span id="playerName2"> Computer </span>
+			</div>
+			<div class="insideBox">
+				<div class="boxPoints">
+					<span id="currentPoint2"> 0 </span>
+				</div>
+			</div>
+			<div class="insideBox">
+				<div class="boxPointsNeed">
+					<span id="roundPoint2"> 0 </span>
+				</div>
+			</div>
+		</div>
+		<button class="gameRoll" id="roll" onclick="ochkoGaming()"> Generate! </button>
+		<div class="endGame" id="end1">
+			<span id="name1">  </span>
+			<button class="endGame1" onclick="ochkoRestart()"> Try again! </button>
+		</div>
+		<div class="endGame" id="end2">
+			<span id="name2">  </span>
+			<button class="endGame1" onclick="ochkoRestart()"> Try again! </button>
+		</div>
+	</div>
+
+	<div class="globalCase" id="twentyOneGame">
+		<div class="conteinerGlobal">
+			<div class="boxCarts">
+				<span id="cartPlayerName1"> - </span>
+			</div>
+			<div class="insideBox">
+				<div class="boxPoints">
+					<span id="cartPoint1"> 0 </span>
+				</div>
+			</div>
+			<div class="insideBox">
+				<div class="boxCartsNeed" id="cart1"></div>
+			</div>
+		</div>
+		<div class="line">
+
+		</div>
+		<div class="conteinerGlobal">
+			<div class="boxCarts">
+				<span id="cartPlayerName2"> - </span>
+			</div>
+			<div class="insideBox">
+				<div class="boxPoints">
+					<span id="cartPoint2"> 0 </span>
+				</div>
+			</div>
+			<div class="insideBox">
+				<div class="boxCartsNeed" id="cart2"></div>
+			</div>
+		</div>
+		<button class="gameRoll" id="cartRoll" onclick="twentyOneGaming()"> Generate! </button>
+		<button class="stopGame" id="cartStop" onclick="twentyOneStop()"> Stop! </button>
+		<div class="endGame" id="cartEnd1">
+			<span id="cartName1">  </span>
+			<button class="endGame1" onclick="twentyOneRestart()"> Try again! </button>
+		</div>
+		<div class="endGame" id="cartEnd2">
+			<span id="cartName2">  </span>
+			<button class="endGame1" onclick="twentyOneRestart()"> Try again! </button>
+		</div>
+	</div>
+
+	<div id="casinoGame">
+		<div class="globalCase">
+			<div class="conteinerGlobal">
+				<div class="box">
+					<span id="casinoPlayerName1"> - </span>
+				</div>
+			</div>
+			<div class="conteinerGlobal">
+				<div class="box">
+					<span> Your money: <span id="money"> 1000 </span> </span>
+				</div>
+			</div>
+		</div>
+		<div class="globalCase">
+			<div class="conteinerGlobal">
+				<div class="box" id="casinoPoint1"></div>
+				<div class="box" id="casinoPoint2"></div>
+				<div class="box" id="casinoPoint3"></div>
+			</div>
+			<div class="conteinerGlobal">
+				<div class="box" id="casinoPoint4"></div>
+				<div class="box" id="casinoPoint5"></div>
+				<div class="box" id="casinoPoint6"></div>
+			</div>
+			<div class="conteinerGlobal">
+				<div class="box" id="casinoPoint7"></div>
+				<div class="box" id="casinoPoint8"></div>
+				<div class="box" id="casinoPoint9"></div>
+			</div>
+			<button class="gameRoll" id="casinoRoll" onclick="casinoGaming()"> Push </button>
+			<div class="endGame" id="casinoEnd1">
+				<span id="casinoName1"> You lose all your money! </span>
+				<button class="endGame1" onclick="casinoRestart()"> Try again! </button>
+			</div>
+		</div>
+		<div class="globalCase">
+			<div class="conteinerGlobal">
+				<div class="box">
+					<span> Bet: 200 </span>
+				</div>
+			</div>
+			<div class="conteinerGlobal">
+				<div class="box">
+					<span id="Statist">  </span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>getStarted()</script>
+</body>
+</html>
